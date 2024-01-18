@@ -61,7 +61,7 @@ here ther is 2 function that i like to talk about 1st one is "get_user_profile" 
 
  ## Reporting Issues & Contributions
 
-Feel free to report <b>[issues](https://github.com/KaranKathur06/GHOST_VA/issues/new)</b> and <b>contribute</b> to this repository.
+Feel free to report <b>[issues](https://github.com/KaranKathur06/GHOST-VA/issues/new)</b> and <b>contribute</b> to this repository.
 
 <br/>
 
