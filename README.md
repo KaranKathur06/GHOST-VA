@@ -1,9 +1,7 @@
 # GHOST-VA
 # Python-Virtual-assistant
 
-Hello I am Karan kathur. I am IT student. I have created this VA with help of ChatGPT and some other developer's source code as inspiration and i have done most of wrok with my creativity and logic so please dont climb on me for copyright thank you.
-
-### VAVOStand for 'Virtual Assistant Version One' A python based programme that uses speech recognition and text-to-speech functions.</br>
+### VAVO Stand for 'Virtual Assistant Version One' A python based programme that uses speech recognition and text-to-speech functions.</br>
 Google text-to-speech API were used. (Only work when the system is online so its required to when you use this VA make sure your system is connected with Internet).
 
 **API KEYS**
