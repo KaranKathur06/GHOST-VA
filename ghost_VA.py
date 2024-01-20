@@ -94,7 +94,7 @@ def greet_user():
     with open("user_name.txt", "r") as file:
         name = file.read().strip()
 
-    gender = "sir" if not is_girl_name(name) else "mam"
+    gender = "{gender}" if not is_girl_name(name) else "mam"
 
     if 6 <= current_hour < 12:
         speak(f"Good morning {name} {gender}!")
@@ -122,7 +122,7 @@ def get_user_profile():
             if name != 'none':
                 with open("user_names.txt", "a") as file:
                     file.write(name + '\n')
-                gender = "sir" if not is_girl_name(name) else "mem"
+                gender = "{gender}" if not is_girl_name(name) else "mem"
                 return name
 
             else:
@@ -169,7 +169,7 @@ def get_weather(city):
     base_url = "http://api.openweathermap.org/data/2.5/weather"
     params = {
         "q": city,
-        "appid": "4d80a99ef71f217a50dfbd34b19af9d4", # Replace with your OpenWeatherMap API key 
+        "appid": "your-api-id ", # Replace with your OpenWeatherMap API key 
         "units": 'imperial' and "metric" # Use "imperial" for Fahrenheit, "metric" for Celsius
     }
     response = requests.get(base_url, params=params)
@@ -274,18 +274,18 @@ def main():
 
             
             elif 'youtube' in query:
-                speak('What do you want to search on YouTube, sir?')
+                speak('What do you want to search on YouTube, {gender}?')
                 query = listen().lower()
                 query = query.replace("youtube", "") 
                 search_youtube(query)
 
             elif 'play video' in query:
-                speak('What do you want to play on Youtube, sir?')
+                speak('What do you want to play on Youtube, {gender}?')
                 query = listen().lower()
                 play_on_youtube(query)
 
             elif 'Google' in query:
-                speak('What do you want to search on Google, sir?')
+                speak('What do you want to search on Google, {gender}?')
                 query = listen().lower()
                 query = query.replace("search on Google", "")
                 search_google(query)
@@ -296,12 +296,12 @@ def main():
                 speak("Opening Spotify. Enjoy your music!")
             
             elif "send whatsapp message" in query:
-                speak('On what number should I send the message sir? Please enter in the console: ')
+                speak('On what number should I send the message {gender}? Please enter in the console: ')
                 number = input("Enter the number: ")
-                speak("What is the message sir?")
+                speak("What is the message {gender}?")
                 message = listen().lower()
                 send_whatsapp_message(number, message)
-                speak("I've sent the message sir.")
+                speak("I've sent the message {gender}.")
 
             elif "date and time" in query:
                 DayandTime()
