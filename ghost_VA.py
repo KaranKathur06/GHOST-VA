@@ -94,7 +94,7 @@ def greet_user():
     with open("user_name.txt", "r") as file:
         name = file.read().strip()
 
-    gender = "{gender}" if not is_girl_name(name) else "mam"
+    gender = "sir" if not is_girl_name(name) else "mam"
 
     if 6 <= current_hour < 12:
         speak(f"Good morning {name} {gender}!")
