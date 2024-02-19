@@ -91,7 +91,7 @@ def is_girl_name(name):
 def greet_user():
     global gender,name
     current_hour = datetime.datetime.now().hour
-    with open("user_name.txt", "r") as file:
+    with open("user_name.txt", "a") as file:
         name = file.read().strip()
 
     gender = "sir" if not is_girl_name(name) else "mam"
