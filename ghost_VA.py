@@ -84,16 +84,29 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
 
+
 def is_girl_name(name):
     # Simple heuristic: If the name ends with 'a', 'i', 'n', or 'l', consider it a girl's name
     return name.lower().endswith(('a', 'i',  'l'))
 
-def greet_user():
-    global gender,name
-    current_hour = datetime.datetime.now().hour
-    with open("user_name.txt", "a") as file:
-        name = file.read().strip()
 
+def greet_user():
+    global gender, name
+    current_hour = datetime.datetime.now().hour
+    
+    # Read user names from the file
+    with open("user_names.txt", "r") as file:
+        names = file.readlines()
+    
+    # Remove newline characters and strip leading/trailing spaces
+    names = [name.strip() for name in names if name.strip()]
+    
+    # Take the last name as the most recent user
+    if names:
+        name = names[-1]
+    else:
+        name = "User"
+    
     gender = "sir" if not is_girl_name(name) else "mam"
 
     if 6 <= current_hour < 12:
@@ -101,7 +114,7 @@ def greet_user():
     elif 12 <= current_hour < 18:
         speak(f"Good afternoon {name} {gender}!")
     else:
-        speak(f"Good evening {name} {gender}!") 
+        speak(f"Good evening {name} {gender}!")
 
 
 def get_user_profile():
@@ -220,8 +233,6 @@ def tell_joke():
     joke = pyjokes.get_joke()
     print("Joke: ", joke)
     speak(joke)
-
-
 
 
 #------------------------------------------------------------MAIN FUNCTION---------------------------------------------------------------#
