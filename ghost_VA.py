@@ -14,7 +14,6 @@ import random
 import pyjokes
 import requests
 
-
 r = sr.Recognizer()
 engine = pyttsx3.init('sapi5')
 # Set Rate
